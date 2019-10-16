@@ -1,0 +1,92 @@
+<head>
+    <%- include('./head') %>
+</head>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse show" id="navbarsExample04">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/about">about</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project">project</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/mate">mate</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="mydropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">login/join</a>
+        <div class="dropdown-menu" aria-labelledby="mydropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-md-0">
+      <input class="form-control" type="text" placeholder="Search">
+    </form>
+  </div>
+</nav>
+
+<!-- <nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+
+    <ul class="nav navbar-nav navbar-left" style="font-size: 16px; color: black; ">
+        <li><a class="nav-a" href="/">home</a></li>
+      </ul>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: 60px;">
+      <ul class="nav navbar-nav navbar-right" style="font-size: 16px; color: white; ">
+        <li><a class="nav-a" href="/about">About</a></li>
+        <li><a class="nav-a" href="/project">Project</a></li>
+        <li><a class="nav-a" href="/mate">Mate</a></li>
+
+        <% if(!logged) { %>
+          <li><a class="nav-a" href="/login" id="login-trigger">Login/Join</a></li>
+        <% }else{ %>
+          <li><a class="nav-a" href="/login" id="login-trigger">마이페이지</a></li>
+          <li><a class="nav-a" href="/logout" id="login-trigger">로그아웃</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+
+<script>
+  $(document).ready(function(){
+    $(window).scroll(function(){
+      var scroll = $(window).scrollTop();
+      if(scroll>450){
+        $(".navbar").css("background","#323334");
+      }
+      else{
+        $(".navbar").css("background","transparent");
+      }
+    })
+  })
+</script>
+
+<style>
+  .nav-a {
+    color: white;
+    font-size: 14px;
+    background-color:transparent !important;
+  }
+
+  .nav-a:hover{
+    /* background-color: rgba( 255, 255, 255, 0); */
+    font-size: 14.5px;
+    color: white;
+    font-weight: 900;
+  }
+
+  .dropdown-link{
+    color: black !important;
+    float: right;
+  }
+</style>  -->

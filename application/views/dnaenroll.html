@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>DNA 등록</title>
+</head>
+<body>
+    피부 (SKIN) <br>
+    피부 노화 <input type='text' id='aging'>
+    피부 탄력 <input type='text' id='elasticity'>
+    색소 침착 <input type='text' id='pigmentation'>
+    <button id='dataBtn'>확인</button>
+
+<script>
+    $('#dataBtn').click(() => {
+        var aging = document.getElementById('aging').value;
+        var elasticity = document.getElementById('elasticity').value;
+        var pigmentation = document.getElementById('pigmentation').value;
+
+        $.ajax({
+            method: 'post',
+            url: '/dnaenroll',
+            data: {aging: aging, elasticity: elasticity, pigmentation: pigmentation},
+        })
+    })
+</script>    
+</body>
+</html>
