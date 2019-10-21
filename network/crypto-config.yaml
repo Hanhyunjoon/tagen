@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-
+# 템플릿은 피어 만 생성 해주는 것이다.???  
 # ---------------------------------------------------------------------------
 # "OrdererOrgs" - Definition of organizations managing orderer nodes
 # ---------------------------------------------------------------------------
@@ -10,26 +10,28 @@ OrdererOrgs:
   # ---------------------------------------------------------------------------
   # Orderer
   # ---------------------------------------------------------------------------
-  - Name: Orderer
-    Domain: example.com
+  - Name: GeneOrderer
+    Domain: gene.com
     # ---------------------------------------------------------------------------
     # "Specs" - See PeerOrgs below for complete description
     # ---------------------------------------------------------------------------
     Specs:
       - Hostname: orderer
+    Template: 
+      Count: 1
 # ---------------------------------------------------------------------------
 # "PeerOrgs" - Definition of organizations managing peer nodes
 # ---------------------------------------------------------------------------
 PeerOrgs:
-  - Name: Org1
-    Domain: org1.example.com
+  - Name: MemberOrg
+    Domain: memberorg.example.com
     Template:
       Count: 1
     Users:
       Count: 1
 
-  - Name: Org2
-    Domain: org2.example.com
+  - Name: CompanyOrg
+    Domain: companyorg.example.com
     Template:
       Count: 1
     Users:
