@@ -1,7 +1,7 @@
 #chaincode insall
 docker exec cli peer chaincode install -n genedata -v 1.0 -p github.com/genedata
 #chaincode instatiate
-docker exec cli peer chaincode instantiate -n genedata -v 1.0 -C mychannel -c '{"Args":["a","11","111","11"]}' -P 'OR ("Org1MSP.member", "Org2MSP.member")'
+docker exec cli peer chaincode instantiate -n genedata -v 1.0 -C mychannel -c '{"Args":["Init"]}' -P 'OR ("Org1MSP.member", "Org2MSP.member")'
 sleep 5
 #chaincode query a
 docker exec cli peer chaincode query -n genedata -C mychannel -c '{"Args":["getGene","a"]}'

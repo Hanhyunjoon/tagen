@@ -138,18 +138,18 @@ services:
       - 5984:5984
     networks:
       - basic
-  # couchdb2:
-  #   container_name: couchdb2
-  #   image: hyperledger/fabric-couchdb
-  #   # Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password
-  #   # for CouchDB.  This will prevent CouchDB from operating in an "Admin Party" mode.
-  #   environment:
-  #     - COUCHDB_USER=
-  #     - COUCHDB_PASSWORD=
-  #   ports:
-  #     - 6984:5984
-  #   networks:
-  #     - basic
+  couchdb2:
+    container_name: couchdb2
+    image: hyperledger/fabric-couchdb
+    # Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password
+    # for CouchDB.  This will prevent CouchDB from operating in an "Admin Party" mode.
+    environment:
+      - COUCHDB_USER=
+      - COUCHDB_PASSWORD=
+    ports:
+      - 6984:5984
+    networks:
+      - basic
   # couchdb3:
   #   container_name: couchdb3
   #   image: hyperledger/fabric-couchdb

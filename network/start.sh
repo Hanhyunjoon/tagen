@@ -10,7 +10,7 @@ set -ev
 function replacePrivateKey() {
     echo "ca key file exchange"
     cp docker-compose-template.yml docker-compose.yml
-    PRIV_KEY=$(ls crypto-config/peerOrganizations/companyorg.example.com/ca/ | grep _sk)
+    PRIV_KEY=$(ls crypto-config/peerOrganizations/org1.example.com/ca/ | grep _sk)
     sed -i "s/CA_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose.yml
 }
 
@@ -28,11 +28,11 @@ function checkPrereqs() {
 }
 
 checkPrereqs
-# replacePrivateKey
+replacePrivateKey
 
-# # docker-compose -f docker-compose.yml down
+docker-compose -f docker-compose.yml down
 
-# replacePrivateKey
+replacePrivateKey
 
 docker-compose -f docker-compose.yml up -d 
 docker ps -a
@@ -51,6 +51,3 @@ sleep 5
 # Join peer0.org2.example.com to the channel.
 docker exec -e "CORE_PEER_LOCALMSPID=Org2MSP" -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org2.example.com/msp" peer0.org2.example.com peer channel join -b /etc/hyperledger/configtx/mychannel.block
 sleep 5
-# Join peer0.org2.example.com to the channel.
-# docker exec -e "CORE_PEER_LOCALMSPID=Org3MSP" -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org3.example.com/msp" peer0.org3.example.com peer channel join -b /etc/hyperledger/configtx/mychannel.block
-# sleep 5
